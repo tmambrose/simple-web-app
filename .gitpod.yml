@@ -7,8 +7,11 @@ ports:
 tasks:
   - init: npm install
     command: npm run dev
-  - name: Database
-    before: sh /workspace/scripts/start-database.sh
+  - name: db
+    # starting mongo in background, so it doesn't block prebuilds
+    before: >
+      mkdir -p /workspace/data &&
+      (mongod --dbpath /workspace/data &)
 
 github:
   prebuilds:
