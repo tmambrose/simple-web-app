@@ -1,7 +1,17 @@
 image:
   file: .gitpod.dockerfile
 tasks:
-  - init: |
-      echo 'TODO: build project'
-    command: |
-      echo 'TODO: start app'
+  - init: npm install
+    command: npm run dev
+  - name: Database
+    before: sh /workspace/scripts/start-database.sh
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: false
+    addComment: false
+    addBadge: true
