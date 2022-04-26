@@ -6,7 +6,9 @@ ports:
   
 tasks:
   - name: db
-    command: mkdir -p /workspace/data && mongod --dbpath /workspace/data
+    command: |
+      mkdir -p /workspace/data
+      mongod --dbpath /workspace/data
 
 github:
   prebuilds:
