@@ -1,18 +1,25 @@
 image:
   file: .gitpod.dockerfile
+  
 ports:
-- port: 27017 # mongodb
-  onOpen: ignore
+  - port: 27017 # mongodb
+    onOpen: ignore
+  - port: 5000
+    onopen: open-preview
+  - port: 35729
+    onopen: ignore
   
 tasks:
   - name: db
     command: |
       mkdir -p /workspace/data
       mongod --dbpath /workspace/data
+  - init: npm install
+    command: npm run dev
 
 vscode:
   extensions:
-    - svelte.svelte-vscode
+    - ms-azuretools.vscode-docker
     
 github:
   prebuilds:
