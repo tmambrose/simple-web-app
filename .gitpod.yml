@@ -14,7 +14,9 @@ tasks:
     command: |
       mkdir -p /workspace/data
       mongod --dbpath /workspace/data
-  - init: npm install
+  - name: Terminal 1
+  - name: Terminal 2
+    init: npm install
     command: npm run dev
 
 vscode:
