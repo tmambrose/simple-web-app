@@ -19,9 +19,9 @@ tasks:
     init: npm install
     command: npm run dev
 
-vscode:
-  extensions:
-    - ms-azuretools.vscode-docker
+#vscode:
+#  extensions:
+#    - ms-azuretools.vscode-docker
     
 github:
   prebuilds:
