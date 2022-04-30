@@ -10,6 +10,10 @@ tasks:
       mkdir -p /workspace/data
       mongod --dbpath /workspace/data
 
+vscode:
+  extensions:
+    - svelte.svelte-vscode
+    
 github:
   prebuilds:
     master: true
