@@ -1,27 +1,19 @@
-#image:
-#  file: .gitpod.dockerfile
+image:
+  file: .gitpod.dockerfile
   
 ports:
-#  - port: 27017 # mongodb
-#    onOpen: ignore
+  - port: 27017 # mongodb
+    onOpen: ignore
   - port: 5000
     onopen: open-preview
   - port: 35729
     onopen: ignore
   
 tasks:
-#  - name: db
-#    command: |
-#      mkdir -p /workspace/data
-3      mongod --dbpath /workspace/data
-  - name: Terminal 1
-  - name: Terminal 2
-    init: npm install
-    command: npm run dev
-
-#vscode:
-#  extensions:
-#    - ms-azuretools.vscode-docker
+  - name: db
+    command: |
+      mkdir -p /workspace/data
+      mongod --dbpath /workspace/data
     
 github:
   prebuilds:
